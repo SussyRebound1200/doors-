@@ -1,0 +1,10 @@
+MainSection:NewButton("Spawn Glitch", "Spawns Glitch, it might glitch the room you're in if you spam it..", function()
+local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/Spawner_V2.lua"))()
+local Configuration = {
+    Kill = true, -- change to "Damage = 10," for eyes, doesnt work on other entities
+    Speed = 160, -- 60 for rush, doesnt work on other entities
+    Time = 3 -- 5 for rush, doesnt work on other entities
+}
+
+EntitySpawner:Spawn("Glitch", Configuration)
+    end)
