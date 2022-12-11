@@ -1,10 +1,26 @@
-MainSection:NewButton("Spawn Glitch", "Spawns Glitch, it might glitch the room you're in if you spam it..", function()
-local EntitySpawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/dreadmania/Scripts/main/Spawner_V2.lua"))()
-local Configuration = {
-    Kill = true, -- change to "Damage = 10," for eyes, doesnt work on other entities
-    Speed = 160, -- 60 for rush, doesnt work on other entities
-    Time = 3 -- 5 for rush, doesnt work on other entities
-}
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 
-EntitySpawner:Spawn("Glitch", Configuration)
-    end)
+-- Create entity
+local entity = Creator.createEntity({
+    Model = 10829142080,
+    Speed = 100,
+    DelayTime = 1,
+    HeightOffset = 0,
+    CanKill = true,
+    BreakLights = true,
+    FlickerLights = {
+        true,
+        1, -- Duration of lights flickering (1 = 0.5 seconds)
+    },
+    Cycles = {
+        Min = 2,
+        Max = 5,
+        WaitTime = 1,
+    },
+    CamShake = {
+        false,
+        {5, 15.1, 1},
+        100,
+    },
+    CustomDialog = {"You died to THE 3Gs", "WAIT UH", "subscribe to me if you see this bitch"}, 
+})
